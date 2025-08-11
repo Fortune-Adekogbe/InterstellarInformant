@@ -1,0 +1,34 @@
+# Ignore version control
+.git
+.gitignore
+
+# Python cache files
+**/__pycache__/
+**/*.py[cod]
+
+# Virtual environments and env files
+.env
+.venv/
+venv/
+
+# Editor and IDE folders
+.vscode/
+.idea/
+
+# Project docs, logs, build artifacts, and markdown
+*.log
+*.md
+/build/
+dist/
+docs/
+
+# Docker files (don’t need to be sent in context)
+Dockerfile
+docker-compose.yml
+
+# OS-specific temp files
+.DS_Store
+Thumbs.db
+
+astro_bot.py
+test/
