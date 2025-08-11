@@ -202,4 +202,4 @@ cython_debug/
 
 *.sqlite3
 *.sqlite
-*.yml
+docker-compose.yml

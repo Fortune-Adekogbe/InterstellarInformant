@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  astrobot:
+    build: .
+    container_name: astrobot
+    environment:
+      TELEGRAM_TOKEN: "ENTER TELEGRAM TOKEN"
+      ASTRO_DB: /data/astro_users.sqlite3
+      ASTRO_TZ: "America/Detroit"
+      ASTRO_TAD_PATH: "usa/detroit"
+      ASTRO_DAILY_HOUR: "17"
+      ASTRO_DAILY_MIN: "0"
+      ASTRO_USE_GEMINI: "1"   # default LLM on; /mode lets each user override
+      GEMINI_API_KEY: "ENTER GEMINI API KEY"      # optional but recommended when ASTRO_USE_GEMINI=1
+      GEMINI_MODEL: "models/gemini-2.0-flash-001"
+      SERPAPI_API_KEY: "ENTER SERPAPI KEY"       # optional for web search in LLM mode
+      USE_LLM: "false"   # set to "true" to default to LLM mode for new users
+      IPGEOLOCATION_API_KEY: "" # optional for moonrise/set
+      ASTRO_LLM_FETCH_PAGES: "0"
+    volumes:
+      - astrobot_data:/data
+    restart: unless-stopped
+volumes:
+  astrobot_data:
